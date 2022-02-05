@@ -1,20 +1,78 @@
 backend:
   name: git-gateway
   branch: main
-media_folder: "public/assets/blog"
-public_folder: "/assets/blog"
+publish_mode: editorial_workflow
+media_folder: "public/assets/imgs"
+public_folder: "/assets/imgs"
 collections:
-  - name: "blog"
-    label: "Blog"
-    folder: "src/blog"
+  # Logo Projects
+  - name: "logo"
+    label: "Logo Projects"
+    folder: "src/logoprojects"
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    slug: "{{slug}}"
     fields:
+      - { label: "Tags", name: "tags", widget: "list", default: ["logo"] }
+      - { label: "Featured Image", name: "image", widget: "image" }
+
+  # Graphic Projects
+  - name: "graphic"
+    label: "Graphic Projects"
+    folder: "src/graphicprojects"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Tags", name: "tags", widget: "list", default: ["graphic"] }
+      - { label: "Featured Image", name: "image", widget: "image" }
+
+  # Services
+  - name: "service"
+    label: "Services"
+    folder: "src/service"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Tags", name: "tags", widget: "list", default: ["service"] }
+      - { label: "First Part of Title", name: "title1", widget: "string" }
+      - { label: "Second Part of Title", name: "title2", widget: "string" }
+      - { label: "1stLine", name: "1stLine", widget: "string" }
+      - { label: "2ndLine", name: "2ndLine", widget: "string" }
+      - { label: "3rdLine", name: "3rdLine", widget: "string" }
+      - { label: "4thLine", name: "4thLine", widget: "string" }
+
+  # Portfolio Widget
+  - name: "portfolioWidget"
+    label: "Portfolio Widget"
+    folder: "src/portfolioWidget"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {
+          label: "Tags",
+          name: "tags",
+          widget: "list",
+          default: ["portfolioWidget"],
+        }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Description", name: "description", widget: "string" }
-      - { label: "Author", name: "author", widget: "string" }
-      - { label: "Date", name: "date", widget: "datetime" }
-      - { label: "Tags", name: "tags", widget: "list", default: ["post"] }
       - { label: "Featured Image", name: "image", widget: "image" }
-      - { label: "Image caption", name: "imageAlt", widget: "string" }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Linked Page", name: "link", widget: "string" }
+
+  # About Me
+  - name: "aboutme"
+    label: "About Me"
+    folder: "src/aboutme"
+    create: false
+    slug: "{{slug}}"
+    fields:
+      - { label: "Featured Image", name: "image", widget: "image" }
+      - { label: "Featured PDF", name: "pdf", widget: "file" }
+      - { label: "Description", name: "description", widget: "string" }
+      - { label: "Years experience", name: "yearsExperience", widget: "string" }
+      - {
+          label: "Completed project",
+          name: "completedProjects",
+          widget: "string",
+        }
+      - { label: "Companies worked", name: "companiesWorked", widget: "string" }
+      - { label: "Tags", name: "tags", widget: "list", default: ["aboutme"] }
