@@ -1,0 +1,28 @@
+---
+title: Logo Projects
+layout: "base.njk"
+title_subtitle: recent logo designs
+---
+
+<!--==================== MAIN ====================-->
+<main class="main">
+  <!--==================== LOGO GALLERY ====================-->
+  <section class="gallery section" id="gallery">
+    <div class="gallery-section">
+      <div class="inner-width">
+        <h2 class="section__title grow">{{ title }}</h2>
+        <span class="section__subtitle">{{ title_subtitle }}</span>
+        <div class="gallery grid">
+          {%- for logo in collections.logo -%}
+
+          <a href="{{ logo.data.image }}" class="logo--image">
+            <img src="{{ logo.data.image }}" alt="" class="image" />
+          </a>
+
+          {%- endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+  {% include "contact_section.njk" %}
+</main>

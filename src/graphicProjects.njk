@@ -1,0 +1,28 @@
+---
+title: Graphic Projects
+layout: "base.njk"
+title_subtitle: recent graphic designs
+---
+
+<!--==================== MAIN ====================-->
+<main class="main">
+  <!--==================== DESIGN GALLERY ====================-->
+  <section class="gallery section" id="gallery">
+    <div class="gallery-section">
+      <div class="inner-width">
+        <h2 class="section__title grow">{{ title }}</h2>
+        <span class="section__subtitle">{{ title_subtitle }}</span>
+        <div class="gallery grid">
+          {%- for graphic in collections.graphic -%}
+
+          <a href="{{ graphic.data.image }}" class="design--image">
+            <img src="{{ graphic.data.image }}" alt="" class="image" />
+          </a>
+
+          {%- endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+  {% include "contact_section.njk" %}
+</main>

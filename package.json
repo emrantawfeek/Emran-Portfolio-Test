@@ -1,0 +1,24 @@
+{
+  "name": "Emran-Portfolio-Test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emrantawfeek/Emran-Portfolio-Test.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/emrantawfeek/Emran-Portfolio-Test/issues"
+  },
+  "homepage": "https://github.com/emrantawfeek/Emran-Portfolio-Test#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^1.0.0"
+  }
+}

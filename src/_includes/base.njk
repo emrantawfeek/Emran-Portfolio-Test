@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script>
+      history.scrollRestoration = "manual";
+    </script>
+
+    <!--==================== UNICONS ====================-->
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+    />
+
+    <!--==================== SWIPER CSS ====================-->
+    <link rel="stylesheet" href="/assets/css/swiper-bundle.min.css" />
+
+    <!--==================== CSS ====================-->
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+
+    <!--==================== OPEN GRAPH ====================-->
+    <title>{{ title }}</title>
+    <link rel="shortcut icon" href="/assets/img/3mranWhiteLogo.png" />
+    <meta name="description" content="{{ url_description }}" />
+    <meta property="og:title" content="{{ title }}" />
+    <meta property="og:url" content="https://www.emran.live/" />
+    <meta
+      property="og:image"
+      content="https://cdn.discordapp.com/attachments/768920723657064489/860895095959322654/3mranWebPrv.jpg"
+    />
+  </head>
+  <body>
+    {% include "header.njk" %}
+    {{ content | safe }}
+    {% include "footer.njk" %}
+  </body>
+</html>
